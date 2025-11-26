@@ -1,0 +1,36 @@
+main {
+    height: 100vh;
+    background-image: url("/mustang.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.container_main {
+    height: 100%;
+    width: 100%;
+}
+.container_main .alert .head {
+    background-color: rgba(148, 148, 148, 0.596);
+    padding: 10px 0px 10px 10px;
+    width: 100%;
+    border-radius: 10px 10px 0 0 ;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.438);
+    font-size: large;
+}
+.container_main .alert {
+    background-color: rgba(255, 255, 255, 0.733);
+    border-radius: 10px;
+    position: absolute;
+    top: 25vh;
+    left: 35vw;
+    height: 500px;
+    width: 600px;
+    border: 1px solid rgb(58, 58, 58);
+    padding: 0;
+}
+.container_main .alert p {
+    margin: 10px 0 0 10px;
+    color: rgb(31, 91, 255);
+}

@@ -1,0 +1,94 @@
+<main>
+  <app-header></app-header>
+  <h1>Dashboard FORD</h1>
+
+  <div class="container">
+    <div class="block escolha">
+      <div class="titulo">
+        <h2>Veículo</h2>
+      </div>
+      <div class="select">
+        <select [(ngModel)]="selectedVehicleName">
+          @for(veiculo of vehicles(); track veiculo.id){
+          <option value="{{veiculo.vehicle}}">{{veiculo.vehicle}}</option>
+          }
+        </select>
+      </div>
+    </div>
+    <div class="block vendas">
+      <div class="titulo">
+        <h2>Total de Vendas</h2>
+      </div>
+      <div class="uni">
+        <h3>{{selectedVehicle()?.volumetotal}}</h3>
+        <p>Unid.</p>
+      </div>
+    </div>
+    <div class="block conectados">
+      <div class="titulo">
+        <h2>Conectados</h2>
+      </div>
+      <div class="uni">
+        <h3>{{selectedVehicle()?.connected}}</h3>
+        <p>Unid.</p>
+      </div>
+    </div>
+    <div class="block update">
+      <div class="titulo">
+        <h2>Update Software</h2>
+      </div>
+      <div class="uni">
+        <h3>{{selectedVehicle()?.softwareUpdates}}</h3>
+        <p>Unid.</p>
+      </div>
+    </div>
+  </div>
+  <div class="img">
+    <figure>
+      <img [src]="selectedVehicle()?.img" [alt]="selectedVehicle()?.vehicle || 'Carregando...'">
+
+    </figure>
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Informe o VIN" [(ngModel)]="searchVinInput" (input)="filterVin()" (keyup.enter)="searchByVin()" />
+
+    <ul class="autocomplete-list" *ngIf="filteredVinList().length > 0">
+      <li *ngFor="let vin of filteredVinList()" (click)="selectVin(vin)">
+        {{ vin }}
+      </li>
+    </ul>
+  </div>
+  <table>
+    <thead>
+      <th>Código - vin</th>
+      <th>Odômetro</th>
+      <th>Nível de Combustivel</th>
+      <th>Status</th>
+      <th>Lat.</th>
+      <th>Long.</th>
+    </thead>
+    @if (vehicleTableData(); as data) {
+    <tbody>
+      <td>{{ data.vin }}</td>
+      <td>{{ data.odometro }} Km</td>
+      <td>{{ data.nivelCombustivel }}%</td>
+      <td>{{ data.status }}</td>
+      <td>{{ data.lat }}</td>
+      <td>{{ data.long }}</td>
+    </tbody>
+    } @else {
+    <tbody>
+      <td colspan="6">Carregando dados do veículo, Um momento...</td>
+    </tbody>
+    }
+    <tfoot>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tfoot>
+  </table>
+</main>

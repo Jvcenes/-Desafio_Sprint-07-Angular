@@ -1,0 +1,151 @@
+/* body {
+    height: 100vh;
+} */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(30, 93, 230);
+}
+h2 {
+  font-weight: 400;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  justify-content: center;
+  /* margin: auto; */
+  padding: 0% 5%;
+  margin-top: 30px;
+}
+.block {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid grey;
+  /* height: 130px; */
+  width: 300px;
+}
+.block .select {
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+.block select {
+  width: 100%;
+  height: 40px;
+}
+.block .uni {
+  padding: 0% 5%;
+  padding-top: 10px;
+}
+.block .uni h3 {
+  color: rgb(30, 93, 230);
+  font-size: 35px;
+}
+.titulo {
+  background-color: rgb(252, 252, 252);
+  padding: 10px 0 5px 5px;
+  border-bottom: 1px solid grey;
+}
+.img figure {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+.img figure img {
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  border: 1px solid rgb(32, 66, 255);
+  width: 400px;
+  border-radius: 5px;
+  position: relative;
+}
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  height: 50px;
+}
+
+.autocomplete-list li {
+  padding: 8px;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.autocomplete-list li:hover {
+  background: #eee;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  /* bottom: 0; */
+}
+thead th {
+  /* background-color: blue; */
+  border: 1px solid black;
+  padding: 5px 30px 5px 5px;
+  color: white;
+  background-color: rgb(30, 93, 230);
+}
+table td {
+  text-align: left;
+  padding: 5px 30px 5px 5px;
+}
+table tfoot {
+  background-color: rgb(30, 93, 230);
+}
+@media (max-width: 1145px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 25px;
+    width: fit-content;
+  }
+  figure img {
+    width: 900px;
+  }
+}
+
+/* Para celulares (ex: <= 768px) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Diminui o título principal */
+  }
+
+  .block .uni h3 {
+    font-size: 1.5rem; /* Diminui os números */
+  }
+
+  header {
+    padding: 15px 5%;
+  }
+  figure img {
+    width: 700px;
+  }
+}

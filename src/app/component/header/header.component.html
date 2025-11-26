@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<header>
+  <span class="material-symbols-outlined menu" (click)="toggleSidebar()">
+    menu
+  </span>
+
+  <span class="material-symbols-outlined login">
+    account_circle
+  </span>
+</header>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar" [class.open]="sidebarOpen()">
+  <span class="close-btn material-symbols-outlined" id="closeSidebar" (click)="closeSidebar()">
+    close
+  </span>
+
+  <ul>
+    <li><a (click)="goTo('home')">Home</a></li>
+    <li><a (click)="goTo('dashboard')">Dashboard</a></li>
+    <li><a (click)="isLogout=true; msgLogout(); goTo('')">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- OVERLAY -->
+<div class="overlay" [class.show]="sidebarOpen()" (click)="closeSidebar()">
+</div>

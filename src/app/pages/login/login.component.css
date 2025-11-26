@@ -1,0 +1,70 @@
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+}
+.container .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.container .login .logo img {
+    height: 90px;
+}
+.container .login {
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 1fr 2fr;
+}
+.container .container_login{
+    margin-top: 25px;
+}
+.container .container_login h2{
+    text-align: center;
+    color: rgb(50, 53, 205);
+}
+.container .container_login .input_login {
+    display: block;
+    text-align: justify;
+    min-width: 500px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-size: large;
+}
+.container .container_login .form-check{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+}
+.container .container_login .form-check .form-check-label {
+    margin-right: 100px;
+}
+.container .container_login .button{
+    text-align: end;
+}
+.container .container_login .button button {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(130, 172, 228);
+    color: white;
+    width: 100%;
+}
+.container .img figure img {
+    width: 100%;
+    height: 300px;
+}
+

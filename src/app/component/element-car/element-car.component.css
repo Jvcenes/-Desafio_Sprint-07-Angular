@@ -1,0 +1,7 @@
+.img {
+    margin-top: 30px;
+}
+.img figure {
+    display: flex;
+    justify-content: center;
+}

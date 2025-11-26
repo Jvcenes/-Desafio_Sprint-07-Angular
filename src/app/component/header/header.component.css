@@ -1,0 +1,74 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100vw;
+  /* margin: auto; */
+  padding: 20px 15px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+header .logout img {
+  border-radius: 50px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #1c1c3c;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.open {
+  left: 0; /* aparece */
+}
+
+.sidebar .close-btn {
+  cursor: pointer;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Fundo escuro ao abrir o menu */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 50;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Cursor */
+.menu {
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+}
